@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1159A61CE396F3007E11B7 /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1159A51CE396F3007E11B7 /* ListViewCell.xib */; };
+		2E1159AC1CE397A5007E11B7 /* ListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1159AB1CE397A5007E11B7 /* ListViewCell.m */; };
 		64B920CB1CE33BB600B883F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B920CA1CE33BB600B883F0 /* main.m */; };
 		64B920CE1CE33BB600B883F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B920CD1CE33BB600B883F0 /* AppDelegate.m */; };
 		64B920D41CE33BB600B883F0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B920D31CE33BB600B883F0 /* SecondViewController.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E1159A51CE396F3007E11B7 /* ListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		2E1159AA1CE397A5007E11B7 /* ListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewCell.h; sourceTree = "<group>"; };
+		2E1159AB1CE397A5007E11B7 /* ListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewCell.m; sourceTree = "<group>"; };
 		64B920C61CE33BB600B883F0 /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B920CA1CE33BB600B883F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64B920CC1CE33BB600B883F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +135,9 @@
 				64B921061CE3499500B883F0 /* DetailViewController.m */,
 				64B921081CE34D4800B883F0 /* Book.h */,
 				64B921091CE34D4800B883F0 /* Book.m */,
+				2E1159A51CE396F3007E11B7 /* ListViewCell.xib */,
+				2E1159AA1CE397A5007E11B7 /* ListViewCell.h */,
+				2E1159AB1CE397A5007E11B7 /* ListViewCell.m */,
 			);
 			path = BookApp;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1159A61CE396F3007E11B7 /* ListViewCell.xib in Resources */,
 				64B920DC1CE33BB600B883F0 /* LaunchScreen.storyboard in Resources */,
 				64B920D91CE33BB600B883F0 /* Assets.xcassets in Resources */,
 				64B920D71CE33BB600B883F0 /* Main.storyboard in Resources */,
@@ -290,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1159AC1CE397A5007E11B7 /* ListViewCell.m in Sources */,
 				64B921041CE33DC000B883F0 /* ListViewController.m in Sources */,
 				64B921011CE33D5400B883F0 /* HomeTableViewController.m in Sources */,
 				64B920D41CE33BB600B883F0 /* SecondViewController.m in Sources */,
@@ -522,6 +532,7 @@
 				64B920F81CE33BB600B883F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64B920F91CE33BB600B883F0 /* Build configuration list for PBXNativeTarget "BookAppTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +541,7 @@
 				64B920FB1CE33BB600B883F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64B920FC1CE33BB600B883F0 /* Build configuration list for PBXNativeTarget "BookAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +550,7 @@
 				64B920FE1CE33BB600B883F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

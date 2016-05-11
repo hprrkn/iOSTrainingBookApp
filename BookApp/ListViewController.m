@@ -9,7 +9,11 @@
 #import "ListViewController.h"
 #import "Book.h"
 
+static NSString * const LISTVIEWCELLID = @"ListViewCell";
+
 @interface ListViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) NSArray *books;
 
 @end
 
@@ -28,7 +32,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-
+    
+    [self.myTableView registerNib:[UINib nibWithNibName:LISTVIEWCELLID bundle:nil] forCellReuseIdentifier:LISTVIEWCELLID];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -53,39 +58,35 @@
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     NSArray *items = [[array valueForKeyPath:@"items"] valueForKey:@"volumeInfo"];
     NSMutableArray *mutableBooks = [NSMutableArray array];
-    NSArray *books;
+//    NSArray *books;
     for (id item in items){
         Book *book = [[Book alloc] init];
         [book castJsonToBookClass:item];
         [mutableBooks addObject: book];
-        books = [mutableBooks mutableCopy];
+        self.books = [mutableBooks mutableCopy];
     }
-    NSLog(@"%@", ((Book *)books[0]).title);
-    return books;
+    NSLog(@"%@", ((Book *)self.books[0]).title);
+    return self.books;
 }
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 10;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    return cell;
+ UITableViewCell *cell = [self.myTableView dequeueReusableCellWithIdentifier:LISTVIEWCELLID];
+ 
+ cell.textLabel.text = [NSString stringWithFormat:@"%ld : %@", (long)indexPath.row, ((Book *)self.books[indexPath.row]).title];
+ return cell;
+
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
