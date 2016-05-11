@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "Book.h"
 
 @interface ListViewController ()
 
@@ -22,6 +23,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self tryAPIConnection];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -40,15 +43,27 @@
 
 - (void)tryAPIConnection//:(NSString *)searchWord
 {
-    NSString *baseUrl = @"https://www.googleapis.com/books/v1/volumes?q=dictionary+intitle";
+    NSString *baseUrl = @"https://www.googleapis.com/books/v1/volumes?q=";
     NSString *searchWord = self.searchWord;
     NSString *url = [NSString stringWithFormat:@"%@%@+intitle",baseUrl,searchWord];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-    NSLog(@"%@", [array valueForKeyPath:@"kind"]);
+    
+    NSArray *items = [[array valueForKeyPath:@"items"] valueForKey:@"volumeInfo"];
+    NSM NSArray *books;
+//    for (items ){
+    books[0] = [[[Book alloc] init:items[0]];
+//    }
+    NSLog(@"%@", items[0]);
 }
+
+
+//- (Book) castJsonToBookClass:(NSArray *)array
+//{
+//    
+//}
 
 #pragma mark - Table view data source
 

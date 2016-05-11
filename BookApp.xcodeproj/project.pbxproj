@@ -18,6 +18,7 @@
 		64B921011CE33D5400B883F0 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B921001CE33D5400B883F0 /* HomeTableViewController.m */; };
 		64B921041CE33DC000B883F0 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B921031CE33DC000B883F0 /* ListViewController.m */; };
 		64B921071CE3499500B883F0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B921061CE3499500B883F0 /* DetailViewController.m */; };
+		64B9210A1CE34D4800B883F0 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B921091CE34D4800B883F0 /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		64B921031CE33DC000B883F0 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		64B921051CE3499500B883F0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		64B921061CE3499500B883F0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		64B921081CE34D4800B883F0 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		64B921091CE34D4800B883F0 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				64B921031CE33DC000B883F0 /* ListViewController.m */,
 				64B921051CE3499500B883F0 /* DetailViewController.h */,
 				64B921061CE3499500B883F0 /* DetailViewController.m */,
+				64B921081CE34D4800B883F0 /* Book.h */,
+				64B921091CE34D4800B883F0 /* Book.m */,
 			);
 			path = BookApp;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				64B920D41CE33BB600B883F0 /* SecondViewController.m in Sources */,
 				64B920CE1CE33BB600B883F0 /* AppDelegate.m in Sources */,
 				64B920CB1CE33BB600B883F0 /* main.m in Sources */,
+				64B9210A1CE34D4800B883F0 /* Book.m in Sources */,
 				64B921071CE3499500B883F0 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
