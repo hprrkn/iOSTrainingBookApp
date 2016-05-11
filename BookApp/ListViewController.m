@@ -41,8 +41,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)tryAPIConnection//:(NSString *)searchWord
+- (NSArray *)tryAPIConnection//:(NSString *)searchWord
 {
+    //todo 検索条件
     NSString *baseUrl = @"https://www.googleapis.com/books/v1/volumes?q=";
     NSString *searchWord = self.searchWord;
     NSString *url = [NSString stringWithFormat:@"%@%@+intitle",baseUrl,searchWord];
@@ -50,20 +51,19 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-    
     NSArray *items = [[array valueForKeyPath:@"items"] valueForKey:@"volumeInfo"];
-    NSM NSArray *books;
-//    for (items ){
-    books[0] = [[[Book alloc] init:items[0]];
-//    }
-    NSLog(@"%@", items[0]);
+    NSMutableArray *mutableBooks = [NSMutableArray array];
+    NSArray *books;
+    for (id item in items){
+        Book *book = [[Book alloc] init];
+        [book castJsonToBookClass:item];
+        [mutableBooks addObject: book];
+        books = [mutableBooks mutableCopy];
+    }
+    NSLog(@"%@", ((Book *)books[0]).title);
+    return books;
 }
 
-
-//- (Book) castJsonToBookClass:(NSArray *)array
-//{
-//    
-//}
 
 #pragma mark - Table view data source
 
